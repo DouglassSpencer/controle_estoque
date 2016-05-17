@@ -1,3 +1,4 @@
+//TRABALHO
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -12,8 +13,8 @@ using namespace std;
 const int TAM = 1000;
 int totalProd = 0;
 
-/*AS DUAS FUN«’ES QUE PODEM ALTERAR S√O A FUN«√O CADASTRAR E REMOVER*/
-//obs: a funÁ„o menu est· recebendo &totalProd para a funÁ„o Cadastrar poder modificar a vari·vel
+/*AS DUAS FUN√á√ïES QUE PODEM ALTERAR S√ÉO A FUN√á√ÉO CADASTRAR E REMOVER*/
+//obs: a fun√ß√£o menu est√° recebendo &totalProd para a fun√ß√£o Cadastrar poder modificar a vari√°vel
 
 struct Produto
 {
@@ -25,32 +26,32 @@ struct Produto
 
 };
 
-//FUN«’ES
+//FUN√á√ïES
 
-//Muda o cÛdigo do produto com indice n
+//Muda o c√≥digo do produto com indice n
 void Codigo(Produto *p, int n)
 {
     char aux[100];
 
     do
     {
-        cout << "\nCÛdigo: ";
+        cout << "\nC√≥digo: ";
         cin >> aux;
         fflush(stdin);
 
         p[n].cod = atoi(aux);
 
-        if(p[n].cod == 0) cout << "\nCÛdigo inv·lido.\n";
+        if(p[n].cod == 0) cout << "\nC√≥digo inv√°lido.\n";
 
         else
         {
 
-            for(int i = 0; i < totalProd; i++)  // verifica se o cÛdigo digitado existe para outro produto
+            for(int i = 0; i < totalProd; i++)  // verifica se o c√≥digo digitado existe para outro produto
             {
                 if(p[i].cod == p[n].cod)
                 {
                     p[n].cod = 0;
-                    cout << "\nJ· existe um produto com esse cÛdigo.\n";
+                    cout << "\nJ√° existe um produto com esse c√≥digo.\n";
                     break;
                 }
             }
@@ -90,14 +91,14 @@ void Quantidade(Produto *p, int n)
 
 }
 
-//Muda o preÁo do produto com indice n
+//Muda o pre√ßo do produto com indice n
 void Preco(Produto *p, int n)
 {
     char aux[100];
 
     do
     {
-        cout << "\nPreÁo: ";
+        cout << "\nPre√ßo: ";
         cin >> aux;
         fflush(stdin);
 
@@ -108,8 +109,8 @@ void Preco(Produto *p, int n)
 
 }
 
-//Ordena os produtos em ordem alfabÈtica
-//e coloca todos os produtos com cÛdigo = 0 nas ˙ltimas posiÁıes
+//Ordena os produtos em ordem alfab√©tica
+//e coloca todos os produtos com c√≥digo = 0 nas √∫ltimas posi√ß√µes
 void Ordenar(Produto *p)
 {
 
@@ -154,11 +155,11 @@ void Ordenar(Produto *p)
 //Cadastra novo produto
 void Cadastrar ( Produto *p, int &totalProd)
 {
-    if(totalProd < TAM - 1) //VERIFICA«√O DE LIMITE
+    if(totalProd < TAM - 1) //VERIFICA√á√ÉO DE LIMITE
     {
 
         if(totalProd == 0) cout << "\n\tAVISO\n"
-                                    << "\nN„o existem produtos cadastrados."
+                                    << "\nN√£o existem produtos cadastrados."
                                     <<"\nPor favor, cadastre um produto\n";
 
         else
@@ -181,18 +182,18 @@ void Cadastrar ( Produto *p, int &totalProd)
 
     else
     {
-        cout << "\nFalha no cadastro do produto. Quantidade de produtos m·ximos cadastrados.";
+        cout << "\nFalha no cadastro do produto. Quantidade de produtos m√°ximos cadastrados.";
         system("PAUSE");
     }
 
 }
 
-//Busca um produto especifico pelo cÛdigo.
-//Se o cÛdigo foi encontrado, retorna seu Ìndice
-//Se o cÛdigo n„o for encontrado, retorna -1
+//Busca um produto especifico pelo c√≥digo.
+//Se o c√≥digo foi encontrado, retorna seu √≠ndice
+//Se o c√≥digo n√£o for encontrado, retorna -1
 int BuscarIndice (Produto *p)
 {
-    unsigned int c = 0, op, n; // "n" È o Ìndice do produto
+    unsigned int c = 0, op, n; // "n" √© o √≠ndice do produto
     bool encontrado = false;
     char aux[100];
 
@@ -203,13 +204,13 @@ int BuscarIndice (Produto *p)
         do
         {
 
-            cout << "\nDigite o cÛdigo do produto: ";
+            cout << "\nDigite o c√≥digo do produto: ";
             cin >> aux;
             fflush (stdin);
 
             c = atof(aux);
 
-            if(c == 0) cout << "\nCÛdigo inv·lido";
+            if(c == 0) cout << "\nC√≥digo inv√°lido";
 
         }
         while(c == 0);
@@ -230,15 +231,15 @@ int BuscarIndice (Produto *p)
         {
             do
             {
-                cout << "\nCÛdigo n„o encontrado."
-                     << "\nTentar novamente? 1.Sim  2.N„o"
-                     <<"\nOpÁ„o: ";
+                cout << "\nC√≥digo n√£o encontrado."
+                     << "\nTentar novamente? 1.Sim  2.N√£o"
+                     <<"\nOp√ß√£o: ";
                 cin>> aux;
                 fflush(stdin);
 
                 op = atoi(aux);
 
-                if(op < 1 || op > 2) cout << "\nOpÁ„o inv·lida!\n";
+                if(op < 1 || op > 2) cout << "\nOp√ß√£o inv√°lida!\n";
 
             }
             while(op < 1 || op > 2);
@@ -253,7 +254,7 @@ int BuscarIndice (Produto *p)
 }
 
 //Exibe menu para usuario escolher o que quer editar do produto
-//e retorna a opÁ„o do usu·rio
+//e retorna a op√ß√£o do usu√°rio
 int MenuEditar()
 {
     char aux[100];
@@ -261,19 +262,19 @@ int MenuEditar()
 
     do
     {
-        cout << "\n1. CÛdigo"
-             << "\n2. DescriÁ„o"
+        cout << "\n1. C√≥digo"
+             << "\n2. Descri√ß√£o"
              << "\n3. Quantidade"
-             << "\n4. PreÁo"
+             << "\n4. Pre√ßo"
              << "\n5. Sair"
-             << "\nDigite a opÁ„o que deseja alterar no produto: ";
+             << "\nDigite a op√ß√£o que deseja alterar no produto: ";
 
         cin >> aux;
         fflush(stdin);
 
         op = atoi(aux);
 
-        if(op < 1 || op > 5) cout << "\nOpÁ„o inv·lida!\n";
+        if(op < 1 || op > 5) cout << "\nOp√ß√£o inv√°lida!\n";
 
     }
     while(op < 1 || op > 5);
@@ -282,11 +283,11 @@ int MenuEditar()
 
 }
 
-//FunÁ„o para editar dados do produto
+//Fun√ß√£o para editar dados do produto
 void Editar (Produto *p)
 {
     char aux[100];
-    int n, op; // "n" È o indice do produto
+    int n, op; // "n" √© o indice do produto
 
     system("cls");
     cout << "\n\tEDITAR\n";
@@ -298,7 +299,7 @@ void Editar (Produto *p)
         {
             op = MenuEditar();
 
-            if(op != 5) cout << "\nNovos dados"; // op = 5 È opÁ„o sair
+            if(op != 5) cout << "\nNovos dados"; // op = 5 √© op√ß√£o sair
 
             switch(op)
             {
@@ -322,19 +323,19 @@ void Editar (Produto *p)
 
             }
 
-            if(op != 5)  // a opÁ„o 5 È para sair do menu editar
+            if(op != 5)  // a op√ß√£o 5 √© para sair do menu editar
             {
 
                 do
                 {
-                    cout << "\nDeseja editar algo mais deste produto? 1.Sim  2.N„o"
-                         << "\nOpÁ„o: ";
+                    cout << "\nDeseja editar algo mais deste produto? 1.Sim  2.N√£o"
+                         << "\nOp√ß√£o: ";
                     cin >> aux;
                     fflush(stdin);
 
                     op = atoi(aux);
 
-                    if(op < 1 || op > 2) cout << "\nOpÁ„o inv·lida!";
+                    if(op < 1 || op > 2) cout << "\nOp√ß√£o inv√°lida!";
 
                 }
                 while(op < 1 || op > 2);
@@ -343,15 +344,15 @@ void Editar (Produto *p)
                 {
                     do
                     {
-                        cout << "\nDeseja editar outro produto? 1.Sim  2.N„o"
-                             << "\nOpÁ„o: ";
+                        cout << "\nDeseja editar outro produto? 1.Sim  2.N√£o"
+                             << "\nOp√ß√£o: ";
 
                         cin >> aux;
                         fflush(stdin);
 
                         op = atoi(aux);
 
-                        if(op < 1 || op > 2) cout << "\nOpÁ„o inv·lida!";
+                        if(op < 1 || op > 2) cout << "\nOp√ß√£o inv√°lida!";
 
                     }
                     while(op < 1 || op > 2);
@@ -373,12 +374,12 @@ void Editar (Produto *p)
     }
 }
 
-//FunÁ„o que busca um produto pelo cÛdigo
+//Fun√ß√£o que busca um produto pelo c√≥digo
 //e exibe seus dados
 void Buscar(Produto *p)
 {
 
-    int n; // "n" È o indice do produto
+    int n; // "n" √© o indice do produto
 
     cout << "\n\tBUSCAR\n";
 
@@ -386,20 +387,20 @@ void Buscar(Produto *p)
 
     if(n > -1)
     {
-        cout << "\nCÛdigo: " << p[n].cod
+        cout << "\nC√≥digo: " << p[n].cod
              << "\nNome: " << p[n].nome
              << "\nQuantidade: " << p[n].quant
-             << "\nPreÁo: " << p[n].preco
+             << "\nPre√ßo: " << p[n].preco
              << "\n\n";
 
         system("PAUSE");
     }
 }
 
-//FunÁ„o que remove um produto
+//Fun√ß√£o que remove um produto
 void Remover(Produto *p)
 {
-    int n, op; // "n" È o indice do produto
+    int n, op; // "n" √© o indice do produto
 
     cout << "\n\tREMOVER\n";
 
@@ -408,22 +409,22 @@ void Remover(Produto *p)
     if(n > -1)
     {
 
-        //Mostra as informaÁıes do produto antes de oferecer confirmaÁ„o da remoÁ„o
-        cout << "\nCÛdigo: " << p[n].cod
+        //Mostra as informa√ß√µes do produto antes de oferecer confirma√ß√£o da remo√ß√£o
+        cout << "\nC√≥digo: " << p[n].cod
              << "\nNome: " << p[n].nome
-             << "\nPreÁo: " <<  p[n].preco
+             << "\nPre√ßo: " <<  p[n].preco
              << "\nQuantidade: " <<  p[n].quant;
 
-        //CONFIRMA«√O
-        cout << "\n\nConfirme a remoÁ„o:"
+        //CONFIRMA√á√ÉO
+        cout << "\n\nConfirme a remo√ß√£o:"
              <<"\n1. CONFIRMAR"
              <<"\n2. CANCELAR"
-             <<"\nOpÁ„o: ";
+             <<"\nOp√ß√£o: ";
         cin >> op;
 
         if(op == 1)
         {
-            //IR¡ ZERAR TODOS OS VALORES PARA O PRODUTO
+            //IR√Å ZERAR TODOS OS VALORES PARA O PRODUTO
             p[n].cod = 0;
             p[n].quant = 0;
             p[n].preco = 0;
@@ -434,7 +435,7 @@ void Remover(Produto *p)
         else cout << "\nCancelado.";
 
     }
-    else cout << "\nProduto n„o encontrado.";
+    else cout << "\nProduto n√£o encontrado.";
 
 }
 
@@ -446,10 +447,10 @@ void ListarTodos(Produto * p)
 
     for(int i = 0; i < totalProd; i++) //
     {
-        cout << "\n\nCÛdigo do produto:\t" << p[i].cod
+        cout << "\n\nC√≥digo do produto:\t" << p[i].cod
              << "\nNome do produto:\t" << p[i].nome
              << "\nQuantidade:\t" << p[i].quant
-             << "\nPreÁo:\t" << p[i].preco;
+             << "\nPre√ßo:\t" << p[i].preco;
     }
     cout << "\n";
     system("PAUSE");
@@ -468,7 +469,7 @@ void BaixoEstoque (Produto *p)
 
         else
         {
-            cout << "\nN„o existem produtos com baixo estoque.";
+            cout << "\nN√£o existem produtos com baixo estoque.";
         }
 
     }
@@ -488,7 +489,7 @@ void ValorTotal(Produto *p)
         soma = produto + soma;
     }
 
-    cout<<"\n O valor total(preÁo) de produtos no estoque È: " << soma << "\n";
+    cout<<"\n O valor total(pre√ßo) de produtos no estoque √©: " << soma << "\n";
 }
 
 //Total de produtos no estoque
@@ -504,7 +505,7 @@ void TotalProdutos (Produto *p)
     }
 
     cout << "\n\tTOTAL EM ESTOQUE\n";
-    cout<<"\n O total de produtos no estoque È: "<< soma;
+    cout<<"\n O total de produtos no estoque √©: "<< soma;
 
     ValorTotal(p);
 
@@ -520,7 +521,7 @@ int Menu(){
 
     do{
         cout << "\n\t\tMENU"
-             <<"\nEscola a opÁ„o: "
+             <<"\nEscola a op√ß√£o: "
              <<"\n1 - Cadastrar"
              <<"\n2 - Editar/Alterar Produto"
              <<"\n3 - Buscar Produto"
@@ -530,7 +531,7 @@ int Menu(){
              <<"\n7 - Total de Produtos e Valor Total"
              <<"\n8 - Limpar Tela"
              <<"\n0 - Sair"
-             <<"\nOpÁ„o: ";
+             <<"\nOp√ß√£o: ";
          cin >> aux;
 
         op = atoi(aux);
@@ -591,16 +592,16 @@ int main()
     //MENSAGEM TELA INICIAL
     Inicial();
 
-    //ACENTUA«√O e CARACTERES EM PT-BR
+    //ACENTUA√á√ÉO e CARACTERES EM PT-BR
     setlocale(LC_ALL, "Portuguese");
 
-    //VARI¡VEIS
+    //VARI√ÅVEIS
     int menu_op = 1;
     Produto estoque[TAM];  //VETOR DE PRODUTOS
 
-    //OBS: PRODUTOS COM COD 0 'N√O EXISTEM'
+    //OBS: PRODUTOS COM COD 0 'N√ÉO EXISTEM'
 
-    //COME«O DO PROGRAMA
+    //COME√áO DO PROGRAMA
     while(menu_op != 0)
     {
         if (totalProd == 0)
